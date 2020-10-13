@@ -1,0 +1,747 @@
+*, *:after, *:before{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: .5s ease-in-out;
+}
+/* Body
+---------------------------------------------------------------------- */
+html, body{
+overflow-x:hidden
+}
+body {
+  font-family: 'Muli', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+
+}
+/* End of Body
+---------------------------------------------------------------------- */
+
+/* The General
+---------------------------------------------------------------------- */
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  outline: none;
+}
+.container{
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+/* End of The General
+---------------------------------------------------------------------- */
+
+/* Section HEADER
+----------------------------------------------------------------------*/
+
+header{
+  background: white;
+  margin-bottom: 20px;
+}
+.header__top{
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px 0;
+position: relative;
+}
+/* Logo
+----------------------------------------------------------------------*/
+.logo span{
+  display: inline-block;
+  width:30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+  box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+.logo span:nth-child(odd){background:#b08c5d; }
+.logo span:nth-child(even){background:#e39632;}
+.logo{
+    animation-name: logo;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    visibility: visible !important;
+}
+
+@keyframes logo {
+    0% {
+        transform: scale(0);
+        opacity: 0.0;
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    80% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* End OF Logo
+----------------------------------------------------------------------*/
+
+/*MEDIA QUERIES   for Logo
+----------------------------------------------------------------------*/
+@media (max-width: 320px){
+.logo span{
+  width:19px;
+  height: 19px;
+  line-height: 19px;
+}
+}
+/*End OF MEDIA QUERIES for Logo
+----------------------------------------------------------------------*/
+
+
+/* Menu
+----------------------------------------------------------------------*/
+.menu{
+  float:right;
+}
+.menu li{
+  display: inline-block;
+  margin-right: 20px;
+}
+.menu a{
+  color:#4a1f1f;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  line-height: 40px;
+}
+ .menu a:hover {
+  color: #EF5A42;
+}
+
+/* End OF MENU
+---------------------------------------------------------------------- */
+
+/* BURGER
+---------------------------------------------------------------------- */
+.burger{
+display: none;
+position: relative;
+float: right;
+width: 50px;
+height: 40px;
+margin-right: 20px;
+background-color: transparent;
+}
+.burger span{
+display: block;
+position: absolute;
+top: 19px;
+left: 8px;
+right: 8px;
+height: 3px;
+background: grey;
+}
+.burger span:before, .burger span:after{
+content: "";
+position: absolute;
+display: block;
+left: 0;
+width: 100%;
+height: 3px;
+background: grey;
+}
+.burger span:before{
+  top: -10px;
+}
+.burger span:after{
+  bottom:-10px;
+}
+.menu.active{
+  max-height: 123px;
+}
+/*  End OF  BURGER
+---------------------------------------------------------------------- */
+
+
+/*  MEDIA QUERIES   for MENU and BURGER
+----------------------------------------------------------------------   */
+@media (max-width: 768px){
+.burger{
+display: block;
+}
+header {
+padding: 10px 0;
+}
+.menu {
+max-height: 0;
+background: white;
+float: none;
+position: absolute;
+overflow: hidden;
+top: 63px;
+right: 0;
+left: 0;
+margin: 0;
+padding: 0;
+z-index: 3;
+}
+.menu li {
+display: block;
+text-align: center;
+border-bottom: 1px solid #EBEBE3;
+margin-right: 0;
+}
+}
+
+/*  End OF MEDIA QUERIES  for MENU and BURGER
+----------------------------------------------------------------------   */
+.header__content{
+  background: url("images/header.jpg") no-repeat center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  width:100%;
+	min-height: 650px;
+	position: relative;
+}
+.header__content-title{
+    animation-name:header__content-title;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    visibility: visible !important;
+}
+.header__top-line{
+  animation-name:header__top-line;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  visibility: visible !important;
+}
+.header__bottom-line{
+  animation-name:header__bottom-line;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  visibility: visible !important;
+}
+@keyframes header__top-line{
+    0% {
+        transform: translateX(-150%);
+    }
+    50%{
+        transform: translateX(8%);
+    }
+    65%{
+        transform: translateX(-4%);
+    }
+    80%{
+        transform: translateX(4%);
+    }
+    95%{
+        transform: translateX(-2%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes header__bottom-line{
+    0% {
+        transform: translateX(150%);
+    }
+    50%{
+        transform: translateX(-8%);
+    }
+    65%{
+        transform: translateX(4%);
+    }
+    80%{
+        transform: translateX(-4%);
+    }
+    95%{
+        transform: translateX(2%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes header__content-title{
+    0% {
+        transform: translateX(-150%);
+    }
+    50%{
+        transform: translateX(8%);
+    }
+    65%{
+        transform: translateX(-4%);
+    }
+    80%{
+        transform: translateX(4%);
+    }
+    95%{
+        transform: translateX(-2%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.header__content-title{
+  position: absolute;
+  color: white;
+  font-size: 65px;
+  left:0;
+  right:0;
+  top:45%;
+  text-align: center;
+}
+.header__top-line, .header__bottom-line{
+  position: absolute;
+  left:0;
+  right:0;
+  margin: 0 auto;
+  width:550px;
+  height: 5px;
+  background:linear-gradient(#e18728, rgba(225, 135, 40, 0) 80%) content-box;
+  transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height .6s;
+}
+.header__top-line{
+top:60%;
+}
+.header__bottom-line{
+  top:45%;
+}
+@media(max-width: 600px){
+  .header__content-title{
+    font-size: 45px;
+  }
+  .header__top-line, .header__bottom-line{
+    width:350px;
+  }
+  .header__top-line{
+  top:55%;
+  }
+}
+@media(max-width: 425px){
+  .header__content-title{
+    font-size: 35px;
+  }
+  .header__top-line{
+  top:53%;
+  }
+}
+@media(max-width: 375px){
+  .header__content-title{
+    font-size: 25px;
+  }
+  .header__top-line, .header__bottom-line{
+    width:200px;
+  }
+  .header__top-line{
+  top:51%;
+  }
+}
+
+/*Section  MAIN CONTENT
+----------------------------------------------------------------------    */
+
+.main-content__inner{
+  max-width:1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+.img-item{
+  margin-top: 70px;
+  padding: 20px;
+}
+.img-item__block {
+  position: relative;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  background: black;
+  color: white;
+  margin: 50px auto 0;
+  border: 6px solid white;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.img-item__block:before, .img-item__block:after {
+  content: "";
+  width: 300px;
+  height: 281px;
+  position: absolute;
+  z-index: -1;
+  border: 6px solid white;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.img-item__block:before{
+  background: #F5CEC6;
+  top: 0px;
+  left: -10px;
+  transform: rotate(-5deg);
+  transition-duration: 3s;
+  transition-timing-function: ease-in;
+}
+.img-item__block:after {
+  background: #DCB8B2;
+  top: 5px;
+  left: 0px;
+  transform: rotate(5deg);
+  transition-duration: 3s;
+  transition-timing-function: ease-in;
+}
+ .img-item__image{
+  display: block;
+  width: 300px;
+  height: 300px;
+  opacity: .75;
+  position: relative;
+}
+.img-item__block:hover{
+   overflow: hidden;
+   transition-duration: 3s;
+   transition-timing-function: ease-in;
+}
+ .img-item__image:hover {
+   opacity: 0.45;
+   transform: scale(1.1);
+}
+
+.img-item__title{
+position: absolute;
+top:50%;
+color:white;
+font-size: 24px;
+opacity: 0;
+transform: translateY(-50%);
+}
+.img-item__title{
+  position: absolute;
+  margin: 0 auto;
+  top:50%;
+  right:0;
+  left:0;
+}
+
+.img-item__block:hover .img-item__title{
+  opacity:1;
+}
+/* End OF Section MAIN CONTENT
+----------------------------------------------------------------------         */
+
+
+/*MEDIA QUERIES for Section MAIN CONTENT
+----------------------------------------------------------------------         */
+@media (min-width:768px ) {
+.img-item__block {
+		flex-basis: 30%;
+	}
+}
+@media (min-width:320px ) {
+.img-item__block {
+		flex-basis: 70%;
+	}
+  .img-item__image{
+    width: 250px;
+    height: 250px;
+  }
+  .img-item__block:before, .img-item__block:after {
+    width: 250px;
+    height: 250px;
+  }
+}
+/*End OF MEDIA QUERIES for Section  MAIN CONTENT
+----------------------------------------------------------------------        */
+
+/*Section ABOUT
+----------------------------------------------------------------------        */
+.about {
+  margin-top: 100px;
+  height: 350px;
+}
+.about__content {
+  padding: 10px 50px;
+  background: #dae0e0;
+  height: 250px;
+}
+.about__content-title {
+  padding: 15px 20px;
+}
+.about__content-text {
+  font-size: 15px;
+  margin: 0;
+  line-height: 2;
+}
+/*END OF Section  ABOUT
+----------------------------------------------------------------------        */
+
+/* MEDIA QUERIES for Section ABOUT
+----------------------------------------------------------------------       */
+@media (max-width:545px ) {
+  .about{
+  height: 450px;
+  margin-top: 100px;
+}
+.about__content-title{
+  font-size: 18px;
+}
+.about__content {
+  height: 350px;
+    padding: 20px 30px;
+		font-size: 10px;
+	}
+  .about__content-text{
+    padding: 5px;
+
+  }
+}
+@media (max-width:365px ) {
+.about__content-title{
+  font-size: 18px;
+}
+.about__content {
+    padding: 20px 10px;
+		font-size: 8px;
+	}
+  .about__content-text{
+    font-size: 11px;
+  }
+}
+@media (max-width:320px ) {
+.about__content {
+    padding: 10px ;
+    text-align: center;
+	}
+  .about__content-text{
+    font-size: 15px;
+  }
+}
+/*End OF MEDIA QUERIES for Section ABOUT
+----------------------------------------------------------------------  */
+
+/*Section Video
+----------------------------------------------------------------------        */
+.video{
+  background:  url("images/vdbackground.jpg") no-repeat center;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: multiply;
+  background-size: cover;
+  width:100%;
+  height: 750px;
+  position: relative;
+}
+.video__inner{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 0 0;
+}
+.video-container{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+}
+ iframe{
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:10%;
+}
+@media(max-width:768px){
+  .video__inner{
+    padding: 100px 50px;
+  }
+  iframe{
+    top:30%;
+  }
+}
+@media(max-width:425px){
+  .video{
+    height: 550px;
+  }
+  .video__inner{
+    padding: 100px 20px;
+  }
+}
+@media(max-width:320px){
+  .video{
+    height: 350px;
+  }
+  .video__inner{
+    padding: 50px 20px;
+  }
+}
+/*END OF Section Video
+----------------------------------------------------------------------        */
+/*Section FORM
+----------------------------------------------------------------------   */
+.contact{
+  min-height: 650px;
+  background: url("images/fone.jpg") no-repeat center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.contact h2{
+  text-align: center;
+  padding: 40px 0;
+  color:#fff;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.9);
+}
+input,textarea,button{
+  margin: 0 auto;
+  width:370px;
+  display: block;
+  padding: 18px;
+  border-radius: 5px;
+  border:2px solid grey;
+  outline: none;
+}
+input{
+  line-height: 15px;
+  margin-bottom: 10px;
+}
+button{
+  background: orange;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 20px;
+  font-size: 18px;
+}
+button:hover{
+  background: #cf481f;
+  color:white;
+}
+/* END OF Section FORM
+----------------------------------------------------------------------   */
+
+/* MEDIA QUERIES for Section FORM
+----------------------------------------------------------------------       */
+@media (max-width:425px ) {
+
+input,textarea,button{
+		  width:330px;
+      padding: 13px;
+	}
+  .contact h2{
+    font-size: 18px;
+  }
+}
+@media (max-width:375px ) {
+  .contact{
+    height: 400px;
+  }
+  .contact h2{
+    margin-top: 50px;
+  }
+}
+@media (max-width:320px ) {
+input,textarea,button{
+		  width:230px;
+      padding: 13px;
+	}
+  .contact h2{
+
+    font-size: 18px;
+  }
+}
+/* END OF MEDIA QUERIES for Section FORM
+----------------------------------------------------------------------       */
+
+
+/*Section FOOTER
+----------------------------------------------------------------------        */
+footer{
+  height: 90px;
+  background: #e0dede;
+}
+p{
+  float:left;
+  line-height: 90px;
+  margin-left: 20px;
+}
+.social{
+  float: right;
+  line-height: 90px;
+  margin-right: 20px;
+  font-size: 20px;
+}
+.fa{
+  color: #827070;
+  margin-right:30px;
+}
+.fa:hover {
+  color:#b06d6d;
+}
+/*END OF Section FOOTER
+---------------------------------------------------------------------- */
+
+/* MEDIA QUERIES for Section FOOTER
+----------------------------------------------------------------------       */
+@media (max-width:475px ) {
+
+.footer-col p{
+    font-size: 15px;
+    margin-left: 10px;
+}
+.social{
+  font-size: 15px;
+  line-height: 85px;
+}
+.fa{
+  margin-right:15px;
+}
+}
+@media (max-width:425px ) {
+
+.footer-col p{
+    font-size: 12px;
+    margin-left: 35px;
+}
+.social{
+  font-size: 15px;
+  line-height: 85px;
+}
+.fa{
+  margin-right:20px;
+}
+}
+@media (max-width:345px ) {
+
+.footer-col p{
+    font-size: 10px;
+    margin-left: 35px;
+}
+.social{
+  font-size: 12px;
+  line-height: 85px;
+}
+.fa{
+  margin-right:20px;
+}
+}
+@media (max-width:320px ) {
+
+.footer-col p{
+    font-size: 10px;
+    margin-left: 10px;
+}
+.social{
+  font-size: 13px;
+  line-height: 85px;
+}
+.fa{
+  margin-right:15px;
+}
+}
+/* END OF MEDIA QUERIES for Section FOOTER
+----------------------------------------------------------------------       */
